@@ -1,0 +1,26 @@
+# Copy to clock.config.toml and fill in credentials. This example builds but
+# cannot connect until you supply your own network.
+board = "waveshare-esp32-s3-touch-lcd-5b"
+
+[wifi]
+ssid = "YOUR_WIFI_SSID" # 1..32 UTF-8 bytes
+password = "CHANGE_ME_123" # Empty for open Wi-Fi, 8..63 ASCII, or 64 hex digits
+
+[time]
+# Tried in this order. One to three hostnames or IPv4 addresses.
+ntp_servers = ["time.cloudflare.com", "pool.ntp.org", "time.google.com"]
+sync_interval_seconds = 3600 # 60..86400
+timezone = "Europe/Kyiv" # Europe/Kyiv, Etc/UTC, or UTC
+format = "24h" # 24h or 12h
+locale = "ru_RU" # ru_RU, uk_UA, or en_US
+
+[display]
+brightness = 80 # Integer percentage, 0..100
+
+[weather]
+# Kyiv: the default location from the weather project.
+latitude = 50.45
+longitude = 30.523
+update_seconds = 900
+request_timeout_ms = 15000
+stale_after_seconds = 21600

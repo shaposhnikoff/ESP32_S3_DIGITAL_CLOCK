@@ -1,0 +1,7 @@
+config CLOCK_LVGL_SYSTEM_HEAP
+    bool
+    default y
+    select LV_MEM_CUSTOM
+    help
+        Allocate LVGL canvases through the ESP-IDF heap so large buffers can
+        use PSRAM. The clock's glyph atlas cannot fit the LVGL static heap.
